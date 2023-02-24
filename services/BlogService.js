@@ -10,6 +10,10 @@ exports.createBlog = async (blog) => {
 exports.getBlogById = async (id) => {
   return await BlogModel.findById(id);
 };
+
+exports.getBlogByUserId = async (userId) => {
+  return await BlogModel.find({userId: userId});
+};
  
 exports.updateBlog = async (id, blog) => {
   return await BlogModel.findByIdAndUpdate(id, blog);
